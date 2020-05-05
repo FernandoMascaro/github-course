@@ -7,3 +7,5 @@ Saiba mais em [willianjusten.com.br](http://willianjusten.com.br
 Gostou do curso?)
 
 LINK DE DOAÇÕES
+
+testando git stash
