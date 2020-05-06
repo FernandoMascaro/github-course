@@ -91,7 +91,7 @@ git config --list  // lista alias e outras infos de config
 git tag -a 1.0.0 -m "Readme finalizado"  
 //  Criar tags de versões (anotação + mensagem) depois de uma qtd de commits
 
-git push origin master --tags  //  sobe tags
+git push origin master --tags  //  sobe tags (sobe commits junto)
 
 git tag -d <tagname>  // Apaga tag local
 
