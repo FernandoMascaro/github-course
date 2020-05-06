@@ -1,0 +1,100 @@
+//========== Comandos Git ==========//
+
+-------------------
+Status dos arquivos: UNTRACKED >> TRACKED / MODIFIED / UNSTAGED >> STAGED
+-------------------
+
+vim readme.md
+  // pra criar/modificar arquivo no editor VIM
+
+git status
+
+git add <file>  // adiciona modificado pra staged
+
+git commit -m "Add link to more info"
+  // staged to unmodified (working tree clean)
+
+git commit -am <file>  //  Add e commita todos arquivos modificados
+
+git log
+git log --author="Fer"
+git shortlog
+git shortlog -sn   // só o nome do autor e qtd de commits
+git log --graph
+git log --decorate   // mostra alguns detalhes do commit
+git show   // mostra modificações do arquivo (após commit)
+git show <hash>
+
+git diff  //  mostra modificações do arquivo (antes do commit)
+git diff --name-only  //  mostra só o nome do arquivo modificado
+
+git restore --staged  //  retorna p unstaged arquivo adicionado em staged 
+
+git checkout <file>  // desfaz modificações do arq. (arq em Tracked)
+
+git reset HEAD <file>  //  volta o ponteiro (Staged to Modified) sem desfazer modificação do arquivo.
+
+git reset --soft <hash>  //  Anula o commit e mantém arquivo em Staged pronto pra commit
+
+git reset --mixed <hash>  //  Anula o commit e arquivo volta para Modified
+
+git reset --hard <hash>  //  Anula o commit e as modificações
+
+git revert <commit>  //  Anula o commit e as mudanças sem apagar do log.
+
+============== CONECTAR GIT COM GITHUB ===============
+
+Link para gerar e adicionar chave SSH:
+https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+~/.SSH  //  onde ficam as chaves SSH (pub. e priv.)
+(ls  // visualiza as chaves SSH)
+
+cat id_rsa.pub  //  visualiza sua chave SSH
+VIM id_rsa.pub  //  visualiza sua chave SSH no editor VIM
+
+Copiar chave no GIT pra adicionar no GITHUB
+(acessar settings/SSH and GPG keys para adicionar chave
+Title = Nome da máquina
+Key = <SSH key>
+======================================================
+
+git remote  // Mostra nome remoto (origin)
+git push <origin> <master>  // Push pro <remotename> do <branchname>
+
+git clone <SSH key> <nomo do clone>  // cria clone do repositório
+
+git checkout -b <nome do novo branch>  //  cria/entra em outro branch
+git branch   //  mostra os branches existentes e em qual está
+git checkout <nome do novo branch>  //  entra no branch escolhido
+git branch -D <nome da branch>  //  Deleta branch local
+
+git push origin :<branch>  // Deleta branch remota
+
+git merge <branch a ser integrada>  //  Integra commit de outra branch
+
+git rebase <branch a ser integrada>  //  
+
+vim .gitignore  //  pra ocultar arquivos sensiveis
+ex.: escreve no editor file.json ou *.json (arquivo ou extensão)
+
+* GIT STASH (Bom p qd tem modificações e quer mexer em outra branch)
+git stash  // Guarda/Esconde modificação na branch
+git stash apply  //  Retoma mudança guardada/escondida
+git stash list  //  lista tudo q está em stash
+git stash clear  // limpa stash
+
+git config --global alias.s status  //  configura atalho (s p/ status)
+git config --global --unset alias.s  //  remove alias
+git config --list  // lista alias e outras infos de config
+
+git tag -a 1.0.0 -m "Readme finalizado"  
+//  Criar tags de versões (anotação + mensagem) depois de uma qtd de commits
+
+git push origin master --tags  //  sobe tags
+
+git tag -d <tagname>  // Apaga tag local
+
+git push origin :<tagname>  //  Apaga tag remota
+
+
